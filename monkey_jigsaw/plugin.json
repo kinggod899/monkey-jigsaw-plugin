@@ -1,0 +1,20 @@
+{
+  "id": "monkey_jigsaw",
+  "name": "猴王通用拼图（穷举）",
+  "summary": "自动完成绝区零拼图小游戏：识别面板格数与可拖动碎块，按穷举把碎块逐个试到正确位置。支持 3×3 到 6×6 面板，适配 2K 屏幕。",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "author": {
+    "name": "kinggod899",
+    "url": "https://github.com/kinggod899"
+  },
+  "homepage": "https://github.com/kinggod899/monkey-jigsaw-plugin",
+  "risk": [
+    "automation"
+  ],
+  "compatibility": {
+    "minAppVersion": "0.0.0",
+    "minCoreApiVersion": 1,
+    "python": ">=3.11"
+  }
+}

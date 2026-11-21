@@ -1,0 +1,10 @@
+screen_id: monkey_jigsaw
+screen_name: 猴王通用拼图
+area_list:
+  - area_name: 拼图面板
+    pc_rect: [1006, 173, 1833, 998]
+    text: ''
+    lcs_percent: 0.5
+    template_sub_dir: ''
+    template_id: ''
+    template_match_threshold: 0.7
