@@ -17,13 +17,30 @@ monkey_jigsaw/          插件包，目录名 = APP_ID
 
 ## 本地校验
 
+校验和打包脚本在官方仓 [plugin-tools](https://github.com/OneDragon-Anyone/plugin-tools)，不需要复制进本仓库。本地想少等一轮就克隆到临时目录，版本与 CI 一致：
+
 ```shell
-python scripts/validate_plugin.py --strict
+git clone --depth 1 --branch v1 https://github.com/OneDragon-Anyone/plugin-tools.git .plugin-tools
+
+python .plugin-tools/scripts/validate_plugin.py --repo . --strict
+python .plugin-tools/scripts/build_zip.py --repo .
 ```
+
+`.plugin-tools/` 已在 `.gitignore` 中忽略。
 
 ## 发版
 
 1. 改 `monkey_jigsaw/plugin.json` 的 `version`，`versionCode` 加 1，提交
 2. 打 tag 并推送：`git tag v1.0.0 && git push origin v1.0.0`
 
-`Release Plugin` 工作流会自动打包并创建 Release。
+`Release Plugin` 工作流会校验、打包并创建 Release。
+
+## 工作流版本
+
+两个入口工作流只调用官方可复用工作流，逻辑不在本仓库：
+
+```yaml
+uses: OneDragon-Anyone/plugin-tools/.github/workflows/reusable-validate.yml@v1
+```
+
+`@v1` 跟随 v1 系列修复，不会有破坏性变化。想锁定就换成 `v1.0.0` 这样的完整 tag 或具体提交 sha。

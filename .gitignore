@@ -34,3 +34,6 @@ Thumbs.db
 
 # Template tools checked out by CI
 .plugin-template/
+
+# Tools cloned locally or checked out by CI
+.plugin-tools/
